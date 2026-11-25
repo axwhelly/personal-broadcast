@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Personal Broadcast</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand"><div class="logo">PB</div><div><b>PERSONAL BROADCAST</b><small>Панель подготовки объявлений</small></div></div>
+    <span class="status"><i></i> ГОТОВО</span>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">TELEGRAM MINI APP</p>
+    <h1>Управление<br><span>сообщениями</span></h1>
+    <p class="muted">Подготовь текст, выбери нужные чаты и отправь объявление вручную.</p>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><small>Выбрано чатов</small><strong id="selectedCount">0</strong></div>
+    <div class="stat"><small>Символов</small><strong id="charCount">0</strong></div>
+    <div class="stat"><small>Статус</small><strong class="purple" id="state">Черновик</strong></div>
+  </section>
+
+  <section class="panel">
+    <div class="section-head"><h2>Чаты</h2><button class="ghost" id="addChat">＋ Добавить</button></div>
+    <input id="search" class="field" placeholder="Поиск по списку...">
+    <div id="chatList" class="chat-list"></div>
+    <p class="hint">Добавляй только чаты, где у тебя есть разрешение публиковать сообщения.</p>
+  </section>
+
+  <section class="panel">
+    <div class="section-head"><h2>Сообщение</h2><span class="counter" id="counter">0 / 4000</span></div>
+    <textarea id="message" maxlength="4000" placeholder="Вставь сюда текст объявления..."></textarea>
+    <div class="preview"><div class="preview-title">ПРЕДПРОСМОТР</div><p id="preview">Текст сообщения появится здесь.</p></div>
+    <div class="actions"><button class="secondary" id="copy">Копировать текст</button><button class="primary" id="save">Сохранить черновик</button></div>
+  </section>
+
+  <section class="panel">
+    <div class="section-head"><h2>План отправки</h2><span class="pill">Вручную</span></div>
+    <label for="delay">Рекомендуемая пауза между ручными публикациями</label>
+    <div class="delay-row"><input id="delay" type="range" min="30" max="600" step="30" value="120"><b id="delayValue">120 сек</b></div>
+    <p class="hint">Это напоминание для пользователя, а не автоматическая отправка или обход лимитов Telegram.</p>
+    <div class="actions"><button class="secondary" id="pause">Пауза</button><button class="danger" id="stop">Сбросить план</button></div>
+    <p id="notice" class="notice">Черновик готов к подготовке.</p>
+  </section>
+
+  <footer>PERSONAL BROADCAST <span>•</span> Локальный черновик</footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
